@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(SolveAXXB)
+project(solverAXXB)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 #set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin)
 
@@ -22,16 +22,16 @@ include_directories(
   ${EIGEN_INCLUDE_DIRS}
 )
 
-add_library(SolveAXXB SHARED ${SRC})
+add_library(solverAXXB SHARED ${SRC})
 ## Specify libraries to link a library or executable target against
-target_link_libraries(SolveAXXB
+target_link_libraries(solverAXXB
   ${EIGEN_LIBRARIES}
 )
 
-install(TARGETS SolveAXXB
+install(TARGETS solverAXXB
   LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
   ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
   
 #install(FILES axxb/*.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
-install(DIRECTORY axxb/ DESTINATION include/SolveAXXB FILES_MATCHING PATTERN "*.h")
+install(DIRECTORY axxb/ DESTINATION include/solverAXXB FILES_MATCHING PATTERN "*.h")
